@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zihad | Personal Master Profile</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            600: '#334e68',
+                            800: '#102a43',
+                            900: '#0b1b2b',
+                        },
+                        amber: {
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .serif-title {
+            font-family: 'Cinzel', serif;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-navy-800 selection:text-white">
+
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-lg bg-navy-900 text-amber-500 font-bold flex items-center justify-center text-xl shadow-md group-hover:bg-navy-800 transition-colors">
+                    Z
+                </div>
+                <div>
+                    <span class="serif-title text-xl font-bold tracking-wide text-navy-900">ZIHAD</span>
+                    <span class="block text-[10px] uppercase font-mono tracking-widest text-slate-500">Master Profile</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-navy-900 transition-colors">About</a>
+                <a href="#education" class="hover:text-navy-900 transition-colors">Education</a>
+                <a href="#bncc" class="hover:text-navy-900 transition-colors">BNCC & Parade</a>
+                <a href="#issb" class="hover:text-navy-900 transition-colors">ISSB Journey</a>
+                <a href="#leadership" class="hover:text-navy-900 transition-colors">Leadership</a>
+                <a href="#skills" class="hover:text-navy-900 transition-colors">Skills</a>
+                <a href="#interests" class="hover:text-navy-900 transition-colors">Interests</a>
+                <a href="#contact" class="hover:text-navy-900 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="#contact" class="px-4 py-2 text-xs font-semibold rounded-lg bg-navy-900 text-white hover:bg-navy-800 transition-all shadow-sm">
+                    Get in Touch
+                </a>
+            </div>
+
+            <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-navy-900 hover:bg-slate-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 text-sm font-medium text-slate-700">
+            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-slate-100">About</a>
+            <a href="#education" class="block px-3 py-2 rounded-md hover:bg-slate-100">Education</a>
+            <a href="#bncc" class="block px-3 py-2 rounded-md hover:bg-slate-100">BNCC & Parade</a>
+            <a href="#issb" class="block px-3 py-2 rounded-md hover:bg-slate-100">ISSB Journey</a>
+            <a href="#leadership" class="block px-3 py-2 rounded-md hover:bg-slate-100">Leadership</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-slate-100">Skills</a>
+            <a href="#interests" class="block px-3 py-2 rounded-md hover:bg-slate-100">Interests</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-slate-100">Contact</a>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 bg-gradient-to-b from-slate-100/70 via-slate-50 to-white relative overflow-hidden border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col items-center gap-10">
+                
+                <!-- Profile Photo Card Positioned FIRST above Name & Bio -->
+                <div class="w-full max-w-sm">
+                    <div class="bg-white border border-slate-200 p-6 rounded-2xl card-shadow text-center space-y-5 relative">
+                        <div class="relative w-56 h-72 mx-auto rounded-2xl bg-slate-100 border-4 border-white shadow-md overflow-hidden group">
+                            <img src="https://i.postimg.cc/bwBHdD1j/file-00000000f2b871fda78399fa5dbb7cc4.png" alt="Mohammed Khaledul Islam Jihad - Profile Photo" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        </div>
+
+                        <div>
+                            <h3 class="serif-title text-xl font-bold text-navy-900">Zihad</h3>
+                            <p class="text-xs font-mono text-slate-500 mt-0.5">Origin: <a href="https://maps.google.com/?cid=18174062459252202338&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="hover:underline text-navy-900 font-medium">Satkania</a> • Residence: <a href="https://maps.google.com/?cid=9899053524162705151&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="hover:underline text-navy-900 font-medium">Chandgaon</a></p>
+                        </div>
+
+                        <div class="space-y-2 text-xs font-mono text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-100 text-left">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Current Study:</span>
+                                <span class="font-semibold text-slate-800">B.Sc. in EEE</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Institution:</span>
+                                <span class="font-semibold text-slate-800">Southern University BD</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Aspiration:</span>
+                                <span class="font-semibold text-amber-600">Civil Service</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Languages:</span>
+                                <span class="font-semibold text-slate-800">Bangla & English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content, Name, Call Sign, and Intro -->
+                <div class="w-full max-w-3xl text-center space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-200/80 border border-slate-300 text-navy-900 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                        <span>Call sign: Viper (Top Gun inspired)</span>
+                    </div>
+
+                    <h1 class="serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight">
+                        Mohammed Khaledul Islam <span class="text-navy-600 underline decoration-amber-500 decoration-4 underline-offset-8">Jihad</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl font-medium text-slate-600 max-w-2xl mx-auto">
+                        EEE Student <span class="text-slate-300">|</span> Cadet Leader <span class="text-slate-300">|</span> Aspiring Public Servant <span class="text-slate-300">|</span> Tactical History Enthusiast
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+                        A deeply patriotic individual driven by public service, discipline, and national commitment. Born in <a href="https://maps.google.com/?cid=18174062459252202338&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">Satkania</a> and currently residing in <a href="https://maps.google.com/?cid=9899053524162705151&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">Chandgaon, Chittagong</a>. Studying Electrical & Electronic Engineering at Southern University Bangladesh while directing strong dedication toward serving the nation through civil administration.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                        <a href="mailto:zihad5130@gmail.com" class="px-6 py-3 rounded-xl bg-navy-900 text-white font-semibold text-sm hover:bg-navy-800 transition-all shadow-md flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email Me</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohammed-khaled-zihad-016b8b304/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-white border border-slate-300 text-slate-700 hover:text-navy-900 hover:border-navy-800 font-semibold text-sm transition-all shadow-sm flex items-center space-x-2">
+                            <i class="fa-brands fa-linkedin text-lg text-blue-600"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-6 border-t border-slate-200 text-center max-w-xl mx-auto">
+                        <div>
+                            <span class="block text-2xl font-bold font-mono text-navy-900">4× 5.0</span>
+                            <span class="text-[11px] text-slate-500">PSC, JSC, SSC & HSC</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold font-mono text-navy-900">2×</span>
+                            <span class="text-[11px] text-slate-500">ISSB Screened In</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold font-mono text-navy-900">Sgt.</span>
+                            <span class="text-[11px] text-slate-500">BNCC Rank</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-600">Personal Background & Patriotism</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-navy-900 mt-1">About Me</h2>
+                <div class="w-12 h-1 bg-navy-900 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-5 text-slate-600 leading-relaxed">
+                    <p>
+                        Born in <a href="https://maps.google.com/?cid=18174062459252202338&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">Satkania</a> and living in <a href="https://maps.google.com/?cid=9899053524162705151&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">Chandgaon, Chittagong</a>, I am an Electrical and Electronic Engineering (EEE) undergraduate student at <a href="https://maps.google.com/?cid=16338477292505540833&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">Southern University Bangladesh</a>.
+                    </p>
+                    <p>
+                        My academic path reflects strong consistency across top institutions in Chittagong: <a href="https://maps.google.com/?cid=6960853892701026461&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">CDA Public School & College</a> (PSC GPA 5.00), <a href="https://maps.google.com/?cid=12638842002024433045&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">Government Muslim High School</a> (JSC & SSC GPA 5.00), and <a href="https://maps.google.com/?cid=6828067563508770860&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="text-navy-900 font-semibold hover:underline">Patiya Government College</a> (HSC GPA 5.00).
+                    </p>
+                    <p>
+                        My core motivation stems from patriotism and a desire to serve Bangladesh. Although my military path through ISSB did not culminate in uniform, spending 10 full days across two appearances fortified my sense of duty, leadership, and resilience. Today, I channel that same spirit toward serving my nation through the <strong>Civil Service</strong> and public administration.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 card-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-navy-900 text-white flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-flag text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base">National Duty & Patriotism</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Dedicated to contributing toward Bangladesh's governance, administrative efficiency, and public welfare through Civil Service.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 card-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-navy-900 text-white flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-graduation-cap text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base">Academic Excellence</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Secured GPA 5.00 across PSC, JSC, SSC, and HSC board examinations in Chittagong.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 card-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-navy-900 text-white flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-users text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base">Leadership & Parade</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Cadet Sergeant commanding school contingents in official parades and leading student bodies with discipline.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 card-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-navy-900 text-white flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-shield-halved text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-base">ISSB Testing Character</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">Screened in twice, spending 10 days in multi-stage psychological, group, and leadership assessments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Roadmap Section with Official Institutional Emblems & Logos -->
+    <section id="education" class="py-20 bg-slate-100/60 border-t border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-600">Academic Journey • Chittagong</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-navy-900 mt-1">Education & Qualifications</h2>
+                <p class="text-slate-500 text-xs sm:text-sm mt-2">A complete track of academic institutions, board certifications, and scores.</p>
+                <div class="w-12 h-1 bg-navy-900 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 1. Primary Education: CDA Public School & College -->
+                <div class="bg-white border border-slate-200 p-6 rounded-2xl card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-[10px] font-mono rounded-full border border-slate-200">Classes 1–5</span>
+                            <span class="text-xs font-bold text-amber-600 font-mono">PSC</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 p-1.5 flex items-center justify-center shrink-0 overflow-hidden">
+                                <img src="https://i.postimg.cc/G4Cj2vYP/CDA.jpg" alt="CDA Public School & College Emblem" class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-navy-900 leading-snug">
+                                    <a href="https://maps.google.com/?cid=6960853892701026461&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="hover:underline">CDA Public School & College</a>
+                                </h3>
+                                <p class="text-[11px] text-slate-500">Chandgaon R/A, Chittagong</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Primary school education laying early academic, disciplinary, and social foundations.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100">
+                        <div class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-lg border border-emerald-200">
+                            PSC Result: GPA 5.00 / 5.00
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. High School Education: Government Muslim High School -->
+                <div class="bg-white border border-slate-200 p-6 rounded-2xl card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-[10px] font-mono rounded-full border border-slate-200">Classes 6–10</span>
+                            <span class="text-xs font-bold text-amber-600 font-mono">JSC & SSC</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 p-1 flex items-center justify-center shrink-0 overflow-hidden">
+                                <img src="https://i.postimg.cc/jW86Z91F/GMHS.png" alt="Government Muslim High School Logo" class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-navy-900 leading-snug">
+                                    <a href="https://maps.google.com/?cid=12638842002024433045&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="hover:underline">Government Muslim High School</a>
+                                </h3>
+                                <p class="text-[11px] text-slate-500">Kotwali, Chittagong</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Established 1909. Prestigious government institution with strong academic rigor and BNCC Sergeant cadet command.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100">
+                        <div class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-lg border border-emerald-200">
+                            JSC & SSC: GPA 5.00 / 5.00
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Higher Secondary College: Patiya Government College -->
+                <div class="bg-white border border-slate-200 p-6 rounded-2xl card-shadow card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-[10px] font-mono rounded-full border border-slate-200">Classes 11–12</span>
+                            <span class="text-xs font-bold text-amber-600 font-mono">HSC</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 p-1.5 flex items-center justify-center shrink-0 overflow-hidden">
+                                <img src="https://i.postimg.cc/TLFVXbfS/Patiya.jpg" alt="Patiya Government College Emblem" class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-navy-900 leading-snug">
+                                    <a href="https://maps.google.com/?cid=6828067563508770860&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="hover:underline">Patiya Government College</a>
+                                </h3>
+                                <p class="text-[11px] text-slate-500">Patiya, Chittagong</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Higher secondary education focusing on Science division core subjects (Physics, Chemistry, Higher Math).
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100">
+                        <div class="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-lg border border-emerald-200">
+                            HSC Result: GPA 5.00 / 5.00
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Undergraduate Degree: Southern University Bangladesh -->
+                <div class="bg-white border border-navy-800/20 p-6 rounded-2xl card-shadow card-hover flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-amber-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 bg-amber-50 text-amber-700 text-[10px] font-mono rounded-full border border-amber-200">Undergraduate</span>
+                            <span class="text-xs font-bold text-navy-900 font-mono">B.Sc. EEE</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 p-2 flex items-center justify-center shrink-0 shadow-sm overflow-hidden">
+                                <img src="https://i.postimg.cc/kBrQ1Wj5/Southern.png" alt="Southern University Bangladesh Logo" class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-navy-900 leading-snug">
+                                    <a href="https://maps.google.com/?cid=16338477292505540833&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" rel="noopener noreferrer" class="hover:underline">Southern University BD</a>
+                                </h3>
+                                <p class="text-[11px] text-slate-500">Arefin Nagar, Chittagong</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Pursuing B.Sc. in Electrical & Electronic Engineering with special interest in circuit logic and power systems.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100">
+                        <span class="inline-block px-3 py-1 bg-navy-900 text-white text-xs font-semibold rounded-lg">
+                            Currently Enrolled
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="bncc" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-600">Cadet Service</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-navy-900 mt-1">BNCC & Parade Leadership</h2>
+                <div class="w-12 h-1 bg-navy-900 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl card-shadow space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Bncc_logo.png" alt="BNCC Logo" class="h-16 w-auto object-contain">
+                            <span class="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-mono rounded-full font-bold">Cadet Sergeant</span>
+                        </div>
+                        <span class="text-xs font-mono uppercase tracking-wider text-amber-600 font-bold">Bangladesh National Cadet Corps</span>
+                        <h3 class="serif-title text-2xl font-bold text-navy-900 mt-1">Cadet Sergeant & BMA Camp</h3>
+                        <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            Active involvement in school BNCC allowed me to earn the rank of <strong>Cadet Sergeant</strong> at Government Muslim High School. Attended a specialized BNCC training camp hosted at the <strong>Bangladesh Military Academy (BMA)</strong>, experiencing military discipline, field craft, and drill precision.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200/80 flex items-center space-x-3 text-xs text-slate-500 font-mono">
+                        <i class="fa-solid fa-location-dot text-amber-600"></i>
+                        <span>Bangladesh Military Academy (BMA) Training Camp</span>
+                    </div>
+                </div>
+
+                <div class="bg-navy-900 text-white p-8 rounded-2xl shadow-xl space-y-4 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-white/5 rounded-full pointer-events-none"></div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 text-amber-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                            <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold">Key Leadership Milestone</span>
+                        </div>
+                        
+                        <h3 class="serif-title text-2xl font-bold text-white mt-1">Victory Day Parade 2020</h3>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                            Selected to lead the official school cadet contingent for Government Muslim High School during the <strong>Victory Day Parade 2020</strong> in Chittagong. Commanded parade drills and represented our institution with pride.
+                        </p>
+
+                        <div class="mt-4 rounded-xl overflow-hidden border border-white/10 h-48">
+                            <img src="https://i.postimg.cc/SXzcqrNf/1000062402.png" alt="Victory Day Parade 2020" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10 flex items-center space-x-3 text-xs text-amber-300 font-mono">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Contingent Commander • Chittagong</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="issb" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-400">Personal Evaluation & Character</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-white mt-1">The ISSB Journey</h2>
+                <p class="text-slate-400 text-sm mt-2">A chapter of rigorous evaluation, personal growth, and patriotic passion.</p>
+                <div class="w-12 h-1 bg-amber-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800 border border-slate-700 p-5 rounded-2xl shadow-2xl space-y-4">
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/f/f0/Inter_Services_Selection_Board_%28Bangladesh%29_logo.png" alt="ISSB Crest" class="h-16 w-auto object-contain">
+                            <div class="text-right">
+                                <span class="px-2.5 py-1 bg-amber-500 text-slate-950 font-mono text-[10px] font-bold rounded">SELECTOR OF THE LEADERS</span>
+                                <h4 class="text-white font-bold text-sm mt-1">Inter Services Selection Board</h4>
+                            </div>
+                        </div>
+
+                        <div class="relative h-64 rounded-xl overflow-hidden border border-slate-700">
+                            <img src="https://i.postimg.cc/ft2N6hpZ/1000065245.jpg" alt="ISSB Waiting Room" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-800/90 border border-slate-700/80 p-5 rounded-2xl">
+                            <div class="flex items-center justify-between border-b border-slate-700 pb-3 mb-3">
+                                <span class="text-xs font-mono text-amber-400 font-bold">1ST APPEARANCE</span>
+                                <span class="text-xs font-mono bg-emerald-900/60 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded font-semibold">Screened In</span>
+                            </div>
+                            <h3 class="text-base font-bold text-white">5-Day Comprehensive Evaluation</h3>
+                            <p class="text-slate-300 text-xs mt-2 leading-relaxed">
+                                Screened in on Day 1 and completed the full 5-day cycle of group task officer challenges, psychological battery, outdoor tasks, and board interview.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-800/90 border border-slate-700/80 p-5 rounded-2xl">
+                            <div class="flex items-center justify-between border-b border-slate-700 pb-3 mb-3">
+                                <span class="text-xs font-mono text-amber-400 font-bold">2ND APPEARANCE</span>
+                                <span class="text-xs font-mono bg-emerald-900/60 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded font-semibold">Screened In</span>
+                            </div>
+                            <h3 class="text-base font-bold text-white">5-Day Comprehensive Evaluation</h3>
+                            <p class="text-slate-300 text-xs mt-2 leading-relaxed">
+                                Successfully screened in for a second time, undergoing another full 5-day assessment and accumulating 10 total days of intensive ISSB testing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-amber-500/30 p-6 rounded-2xl text-left space-y-3">
+                        <div class="flex items-center space-x-2 text-amber-400 text-sm font-semibold">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <span>Transitioning Passion to Public Service</span>
+                        </div>
+                        <p class="text-slate-300 text-xs sm:text-sm italic leading-relaxed">
+                            "Though my dream to serve in uniform did not materialize, spending 10 days in ISSB reinforced my passion for my country. That patriot spirit now propels my dedication toward joining Bangladesh Civil Service to serve my nation in public governance."
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-600">Coordination & Teamwork</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-navy-900 mt-1">Leadership & Event Organisation</h2>
+                <div class="w-12 h-1 bg-navy-900 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl card-shadow card-hover flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="p-3 bg-navy-900 text-white rounded-xl text-lg"><i class="fa-solid fa-futbol"></i></span>
+                            <span class="text-xs font-mono text-slate-500">Tournament Organiser</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900">Celestial Rumble Championship (CRC)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Organiser of a competitive 5-a-side turf football tournament hosted at Fortune Sports Arena in Chandgaon Residential Area. Managed team registrations, match schedules, referee coordination, and pitch logistics.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-200 mt-6 flex items-center justify-between">
+                        <a href="https://instagram.com/crc_s02?mdxt=MXY0MTUybm51d2poaw%3D%3D" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-navy-900 hover:underline inline-flex items-center space-x-1">
+                            <i class="fa-brands fa-instagram text-pink-600 text-sm"></i>
+                            <span>View @crc_s02 on Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl card-shadow card-hover flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-slate-200 p-1 flex items-center justify-center overflow-hidden">
+                                <img src="https://i.postimg.cc/jW86Z91F/GMHS.png" alt="GMHS Logo" class="w-full h-full object-contain">
+                            </div>
+                            <span class="text-xs font-mono text-slate-500">Core Event Team</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900">RAG '22 School Farewell & Celebration</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Participated actively in planning and executing <strong>RAG '22</strong> at Government Muslim High School. Coordinated batch activities, stage setups, budget allocations, and student participation.
+                        </p>
+                        <div class="rounded-xl overflow-hidden border border-slate-200 h-36 mt-2">
+                            <img src="https://i.postimg.cc/mhVzvqys/1000062403.png" alt="RAG '22 Event Banner" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-200 mt-6 flex items-center justify-between">
+                        <a href="https://facebook.com/events/s/rag22/688068759035037/" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-navy-900 hover:underline inline-flex items-center space-x-1">
+                            <i class="fa-brands fa-facebook text-blue-600 text-sm"></i>
+                            <span>View RAG'22 Event Page</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-slate-100/60 border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-600">Core Strengths</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-navy-900 mt-1">Skills & Attributes</h2>
+                <div class="w-12 h-1 bg-navy-900 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                <div class="px-5 py-3 rounded-xl bg-white border border-slate-200 card-shadow text-navy-900 font-medium text-sm flex items-center space-x-3">
+                    <i class="fa-solid fa-landmark text-amber-600"></i>
+                    <span>Civil Administration Readiness</span>
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-white border border-slate-200 card-shadow text-navy-900 font-medium text-sm flex items-center space-x-3">
+                    <i class="fa-solid fa-calendar-check text-amber-600"></i>
+                    <span>Event Management</span>
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-white border border-slate-200 card-shadow text-navy-900 font-medium text-sm flex items-center space-x-3">
+                    <i class="fa-solid fa-comments text-amber-600"></i>
+                    <span>Public Speaking</span>
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-white border border-slate-200 card-shadow text-navy-900 font-medium text-sm flex items-center space-x-3">
+                    <i class="fa-solid fa-sitemap text-amber-600"></i>
+                    <span>People Coordination</span>
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-white border border-slate-200 card-shadow text-navy-900 font-medium text-sm flex items-center space-x-3">
+                    <i class="fa-solid fa-user-shield text-amber-600"></i>
+                    <span>Leadership</span>
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-white border border-slate-200 card-shadow text-navy-900 font-medium text-sm flex items-center space-x-3">
+                    <i class="fa-solid fa-people-group text-amber-600"></i>
+                    <span>Teamwork</span>
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-white border border-slate-200 card-shadow text-navy-900 font-medium text-sm flex items-center space-x-3">
+                    <i class="fa-solid fa-diagram-project text-amber-600"></i>
+                    <span>Organisation & Logistics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interests" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-600">Passions & Pursuits</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-navy-900 mt-1">Interests & History Study</h2>
+                <div class="w-12 h-1 bg-navy-900 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="switchTab('military')" id="tab-military" class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider bg-navy-900 text-white shadow-md transition-all">Military History & Books</button>
+                <button onclick="switchTab('cinema')" id="tab-cinema" class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Films & TV</button>
+                <button onclick="switchTab('sports')" id="tab-sports" class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Sports & MMA</button>
+                <button onclick="switchTab('travel')" id="tab-travel" class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Places Visited</button>
+            </div>
+
+            <!-- Tab 1: Military History & Famous Books -->
+            <div id="content-military" class="tab-content space-y-8">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl card-shadow">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-lg">1971 Liberation War</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Keener interest in accounts written from multiple perspectives: Bangladeshi freedom fighters, Indian commanders, Pakistani military officers, and civilian testimonies.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl card-shadow">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-shield-cat"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-lg">World War II Campaigns</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Deeply interested in classic accounts of WWII, European and Pacific theaters, major battle strategies, and strategic leadership.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl card-shadow">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-chess"></i>
+                        </div>
+                        <h3 class="font-bold text-navy-900 text-lg">Tactics & Field Commanders</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Studying historical commanders such as Erwin Rommel, armored warfare evolution, and command decision-making under pressure.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Featured Books Section with Covers -->
+                <div class="pt-4">
+                    <h4 class="text-sm font-mono uppercase font-bold text-slate-500 mb-4 text-center sm:text-left">Key Historical & Tactical Books:</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col items-center text-center">
+                            <img src="https://i.postimg.cc/K49jqTmY/1000062404.png" alt="The Art of War Book Cover" class="h-36 object-contain rounded shadow mb-3">
+                            <h5 class="text-xs font-bold text-navy-900">The Art of War</h5>
+                            <span class="text-[10px] text-slate-500 font-mono">Sun Tzu</span>
+                        </div>
+
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col items-center text-center">
+                            <img src="https://i.postimg.cc/8JZpY8QY/1000062405.png" alt="Witness to Surrender Book Cover" class="h-36 object-contain rounded shadow mb-3">
+                            <h5 class="text-xs font-bold text-navy-900">Witness to Surrender</h5>
+                            <span class="text-[10px] text-slate-500 font-mono">Siddiq Salik (1971)</span>
+                        </div>
+
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col items-center text-center">
+                            <img src="https://i.postimg.cc/LnY9x0CM/1000062406.png" alt="The Second World War Book Cover" class="h-36 object-contain rounded shadow mb-3">
+                            <h5 class="text-xs font-bold text-navy-900">The Second World War</h5>
+                            <span class="text-[10px] text-slate-500 font-mono">Winston Churchill</span>
+                        </div>
+
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col items-center text-center">
+                            <img src="https://i.postimg.cc/njhZBdjw/1000062407.png" alt="Band of Brothers Book Cover" class="h-36 object-contain rounded shadow mb-3">
+                            <h5 class="text-xs font-bold text-navy-900">Band of Brothers</h5>
+                            <span class="text-[10px] text-slate-500 font-mono">Stephen E. Ambrose</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Cinema Cards -->
+            <div id="content-cinema" class="tab-content hidden">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden">
+                            <img src="https://i.postimg.cc/xktVfKxP/1000062408.png" alt="Band of Brothers Poster" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <span class="text-[10px] font-mono text-amber-600 uppercase font-bold">Series</span>
+                            <h4 class="font-bold text-navy-900 text-sm">Band of Brothers</h4>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden">
+                            <img src="https://cdn.dribbble.com/userupload/9166527/file/original-0c21549b9dad84916805a2a4a65a9f43.png?resize=752x&vertical=center" alt="Peaky Blinders Poster" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <span class="text-[10px] font-mono text-amber-600 uppercase font-bold">Series</span>
+                            <h4 class="font-bold text-navy-900 text-sm">Peaky Blinders</h4>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden">
+                            <img src="https://i.postimg.cc/14Lh3RHv/1000062409.png" alt="Masters of the Air Poster" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <span class="text-[10px] font-mono text-amber-600 uppercase font-bold">Series</span>
+                            <h4 class="font-bold text-navy-900 text-sm">Masters of the Air</h4>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden card-shadow card-hover flex flex-col">
+                        <div class="h-64 bg-slate-200 relative overflow-hidden">
+                            <img src="https://i.postimg.cc/v18CN4Yy/1000062410.png" alt="Oppenheimer Poster" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <span class="text-[10px] font-mono text-amber-600 uppercase font-bold">Film</span>
+                            <h4 class="font-bold text-navy-900 text-sm">Oppenheimer</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Sports & Real Logos -->
+            <div id="content-sports" class="tab-content hidden">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                        <div class="flex items-center space-x-3 text-navy-900 font-bold text-lg">
+                            <i class="fa-solid fa-futbol text-amber-600 text-xl"></i>
+                            <span>Football Favourites</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-3 bg-white border border-slate-200 rounded-xl flex items-center space-x-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="FC Barcelona Crest" class="w-8 h-8 object-contain">
+                                <div>
+                                    <span class="text-[10px] font-mono text-slate-400 uppercase block">Club</span>
+                                    <span class="font-bold text-navy-900 text-sm">FC Barcelona</span>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-white border border-slate-200 rounded-xl flex items-center space-x-3">
+                                <img src="https://i.postimg.cc/3W0VV5Tb/1000062411.png" alt="Argentina FA Logo" class="w-8 h-8 object-contain">
+                                <div>
+                                    <span class="text-[10px] font-mono text-slate-400 uppercase block">National Team</span>
+                                    <span class="font-bold text-navy-900 text-sm">Argentina</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                        <div class="flex items-center space-x-3 text-navy-900 font-bold text-lg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/UFC_logo.svg" alt="UFC Logo" class="h-6 w-auto object-contain">
+                            <span>UFC & Mixed Martial Arts</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Following combat sports and key martial artists including <strong>Islam Makhachev</strong>, <strong>Dustin Poirier</strong>, <strong>Sean Strickland</strong>, and previously <strong>Khabib Nurmagomedov</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Places Visited -->
+            <div id="content-travel" class="tab-content hidden">
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden card-shadow">
+                        <div class="h-32 bg-slate-200 overflow-hidden">
+                            <img src="https://i.postimg.cc/sG5nXzjL/1000062412.png" alt="Cox's Bazar" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="font-bold text-navy-900 text-base">Cox's Bazar</h4>
+                            <p class="text-xs text-slate-500">Longest natural sea beach</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden card-shadow">
+                        <div class="h-32 bg-slate-200 overflow-hidden">
+                            <img src="https://i.postimg.cc/JGW6FsKy/1000062413.png" alt="Bandarban" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="font-bold text-navy-900 text-base">Bandarban</h4>
+                            <p class="text-xs text-slate-500">Chittagong Hill Tracts</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden card-shadow">
+                        <div class="h-32 bg-slate-200 overflow-hidden">
+                            <img src="https://i.postimg.cc/jDMMCZbp/1000062414.png" alt="Rangamati" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="font-bold text-navy-900 text-base">Rangamati</h4>
+                            <p class="text-xs text-slate-500">Kaptai lake district</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden card-shadow">
+                        <div class="h-32 bg-slate-200 overflow-hidden">
+                            <img src="https://i.postimg.cc/v1D3nf8N/1000062415.png" alt="Dhaka" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="font-bold text-navy-900 text-base">Dhaka</h4>
+                            <p class="text-xs text-slate-500">Capital metropolis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-400">Direct Communication</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-white">Get In Touch</h2>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto">
+                    Reach out for academic discussions, event management coordination, or public service initiatives.
+                </p>
+
+                <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div class="bg-slate-800 border border-slate-700 px-6 py-4 rounded-xl flex items-center space-x-4 w-full sm:w-auto">
+                        <i class="fa-solid fa-envelope text-amber-400 text-xl"></i>
+                        <div class="text-left">
+                            <span class="block text-[10px] font-mono text-slate-400">EMAIL</span>
+                            <span class="text-sm font-semibold text-white">zihad5130@gmail.com</span>
+                        </div>
+                        <button onclick="copyEmail()" class="ml-auto text-xs font-mono bg-slate-700 hover:bg-slate-600 px-2.5 py-1 rounded text-slate-300">Copy</button>
+                    </div>
+
+                    <a href="https://www.linkedin.com/in/mohammed-khaled-zihad-016b8b304/" target="_blank" rel="noopener noreferrer" class="bg-slate-800 border border-slate-700 hover:border-amber-400/50 px-6 py-4 rounded-xl flex items-center space-x-4 transition-all w-full sm:w-auto">
+                        <i class="fa-brands fa-linkedin text-blue-400 text-xl"></i>
+                        <div class="text-left">
+                            <span class="block text-[10px] font-mono text-slate-400">LINKEDIN</span>
+                            <span class="text-sm font-semibold text-white">Mohammed Khaled Zihad</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="copyToast" class="hidden text-xs font-mono text-amber-400 pt-2">
+                    <i class="fa-solid fa-check mr-1"></i> Email address copied to clipboard!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © <span id="currentYear"></span> Mohammed Khaledul Islam Jihad (Zihad).
+            </div>
+            <div class="font-mono text-slate-400 flex items-center space-x-2">
+                <span>Viper</span>
+                <span class="text-slate-600">•</span>
+                <span>Top Gun Inspired</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function switchTab(tabKey) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-navy-900', 'text-white', 'shadow-md');
+                tab.classList.add('bg-slate-100', 'text-slate-600');
+            });
+
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            const activeTab = document.getElementById(`tab-${tabKey}`);
+            const activeContent = document.getElementById(`content-${tabKey}`);
+
+            if (activeTab && activeContent) {
+                activeTab.classList.remove('bg-slate-100', 'text-slate-600');
+                activeTab.classList.add('bg-navy-900', 'text-white', 'shadow-md');
+                activeContent.classList.remove('hidden');
+            }
+        }
+
+        function copyEmail() {
+            const email = 'zihad5130@gmail.com';
+            const copyToast = document.getElementById('copyToast');
+
+            const textarea = document.createElement('textarea');
+            textarea.value = email;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            copyToast.classList.remove('hidden');
+            setTimeout(() => {
+                copyToast.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
